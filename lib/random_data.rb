@@ -24,4 +24,8 @@ module RandomData
         letters[0,rand(3..8)].join
     end
     
+    def self.random_number
+        number = rand(0..9999)
+    end
+    
 end
