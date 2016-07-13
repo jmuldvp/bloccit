@@ -11,7 +11,6 @@ RSpec.describe PostsController, type: :controller do
     
     it "assigns [my_post] to @posts" do
       get :index
-      
       expect(assigns(:posts)).to eq([my_post])
     end
   end
@@ -66,7 +65,6 @@ RSpec.describe PostsController, type: :controller do
     end
   end
 
-
   context "GET edit" do
     it "returns http success" do
       get :edit, {id: my_post.id}
@@ -80,9 +78,7 @@ RSpec.describe PostsController, type: :controller do
     
     it "assigns post to be updated to @post" do
       get :edit, {id: my_post.id}
-      
       post_instance = assigns(:post)
-      
       expect(post_instance.id).to eq my_post.id
       expect(post_instance.title).to eq my_post.title
       expect(post_instance.body).to eq my_post.body
