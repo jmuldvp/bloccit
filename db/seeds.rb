@@ -36,10 +36,23 @@ posts = Post.all
  )
 end
 
-user = User.first
-user.update_attributes!(
- email: 'dhh@rails.org',
- password: 'helloworld'
+# user = User.first
+# user.update_attributes!(
+#  email: 'dhh@rails.org',
+#  password: 'helloworld'
+# )
+
+admin = User.create!(
+ name: 'Admin User',
+ email: 'adm@adm.com',
+ password: '123123',
+ role: 'admin'
+)
+
+member = User.create!(
+ name: 'Member User',
+ email: 'mem@mem.com',
+ password: '123123'
 )
  
 puts "Seed finished"
