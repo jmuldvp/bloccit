@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-#   pending "add some examples to (or delete) #{__FILE__}"
   # let(:post) { Post.create!(title: "New Post Title", body: "New Post Body") }
   let(:name) { RandomData.random_sentence }
   let(:description) { RandomData.random_paragraph }
@@ -76,6 +75,23 @@ RSpec.describe Post, type: :model do
         post.votes.create!(value: -1)
         expect(post.rank).to eq (old_rank - 1)
       end
+    end
+  end
+  
+  describe "#create_vote" do
+    it "counts the number of up votes on a new post" do
+      expect( post.up_votes ).to eq(1)
+    end
+    
+    it "calls create vote when a post is created" do
+      p = topic.posts.new(title: "New upvotes", body: "Need a new upvote created.", user: user)
+      expect(p).to receive(:create_vote)
+      p.save
+    end
+    
+    it "checks to see that the first vote belongs to the user" do
+      u = topic.posts.new(title: "New upvotes", body: "Need a new upvote created.", user: user)
+      expect(u.user).to eq(post.user)
     end
   end
 end
