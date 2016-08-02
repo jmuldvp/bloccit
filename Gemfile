@@ -34,3 +34,6 @@ source 'https://rubygems.org'
  
  # Used for encrypting User passwords
  gem 'bcrypt'
+ 
+ # Used for environment variables
+ gem 'figaro', '1.0'
