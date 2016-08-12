@@ -45,10 +45,16 @@ end
 #  password: 'helloworld'
 # )
 
+# member = User.create!(
+#  name: 'Member User',
+#  email: 'mem@mem.com',
+#  password: '123123'
+# )
+
 member = User.create!(
- name: 'Member User',
- email: 'mem@mem.com',
- password: '123123'
+ name: 'Canyon',
+ email: 'canyon.the.malamute@gmail.com',
+ password: 'password'
 )
 
 admin = User.create!(
