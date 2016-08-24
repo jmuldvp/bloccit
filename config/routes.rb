@@ -18,10 +18,6 @@ Rails.application.routes.draw do
   
   resources :sessions, only: [:new, :create, :destroy]
   
-  # get 'posts/index'
-  # get 'posts/show'
-  # get 'posts/new'
-  # get 'posts/edit'
   # get 'welcome/index'  # this is already established below using root
 
   # get 'welcome/about'
